@@ -1,20 +1,12 @@
-
-import ListGroup from "./components/ListGroup";
+import { Children } from "react";
+import Alert from "./components/Alert";
 
 function App() {
 
-  let items = [
-  'New York',
-  'Lagos',
-  'Dublin',
-  'Peru',
-  'Ghana'
-];
-
-  //Event handler
-  const selectItem = (item: string) => console.log(item)
-
-  return (<div><ListGroup items={items} heading="City Listing" onSelectItem={selectItem}/></div>)
+  return (<div><Alert>
+    Hello <span> worlding </span>
+  </Alert>
+  </div>)
 }
 
 export default App;
