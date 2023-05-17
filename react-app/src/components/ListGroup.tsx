@@ -3,15 +3,15 @@ import { useState } from 'react';
 interface ListGroupProps {
     heading: string;
     items: string[];
+    onSelectItem: (item: string) => void;
 }
 
-function ListGroup({items, heading}: ListGroupProps) {
+function ListGroup({items, heading, onSelectItem}: ListGroupProps) {
     // return <h1>List Group</h1>;
 
     // let selectedIndex = 0
 
-    //Event handler
-    const handleClick = (event: MouseEvent) => console.log(event)
+   
 
     const [selectedIndex, setSelectedIndex] = useState(-1);
     
@@ -23,7 +23,10 @@ function ListGroup({items, heading}: ListGroupProps) {
             {items.map((item, index) =>
             (<li
                 key={index}
-                onClick={() => setSelectedIndex(index)}
+                onClick={() => {
+                    setSelectedIndex(index);
+                    onSelectItem(item);
+                }}
                 className={selectedIndex === index ? "list-group-item active" : "list-group-item"}
             >
                 {item}

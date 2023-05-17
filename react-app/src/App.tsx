@@ -10,7 +10,11 @@ function App() {
   'Peru',
   'Ghana'
 ];
-  return (<div><ListGroup items={items} heading="City Listing"/></div>)
+
+  //Event handler
+  const selectItem = (item: string) => console.log(item)
+
+  return (<div><ListGroup items={items} heading="City Listing" onSelectItem={selectItem}/></div>)
 }
 
 export default App;
